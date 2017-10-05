@@ -29,10 +29,12 @@ router.put("/burgers/update", function(req, res) {
     devoured: true
   }, {
     where: {
-      id: req.params.burger_id
+      id: req.body.burger_id
     }
   }).then(function(data) {
     res.redirect("/");
+    req.body.burger_id;
+    console.log(req.body);
   });
 });
 
